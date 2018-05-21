@@ -1,5 +1,7 @@
 ## Shale
 
+[![Build Status](https://travis-ci.org/ShaleCoding/shale-services.svg?branch=master)](https://travis-ci.org/ShaleCoding/shale-services)
+
 shale is a set of services for IRC networks designed for large IRC networks with high
 scalability requirements.  It is relatively mature software, with some code and design
 derived from another package called Atheme and Shrike.
