@@ -26,5 +26,4 @@ matrix:
   allow_failures:
     - env: OPTIONAL_CONF_ARGS="--enable-contrib"
 notifications:
-  irc: "irc.irc4fun.net#Xtheme"
-  irc: "irc.irc4fun.net#Development"
+  irc: "irc.chatfreedom.us#shaleservices"
