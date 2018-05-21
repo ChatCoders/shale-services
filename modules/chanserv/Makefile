@@ -76,6 +76,7 @@ SRCS =			\
 	status.c	\
 	suspend.c	\
 	sync.c		\
+        syntaxquiet.c   \
 	taxonomy.c	\
 	template.c	\
 	topic.c	\
