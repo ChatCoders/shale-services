@@ -1,0 +1,13 @@
+This is the Shale IRC Services v1.* daemon for &network&.
+
+(The next evolution of IRC Services for IRC networks, their
+Staff and especially their users!)
+
+Nickname registrations will expire after &nickexpiry& days.
+Channel registrations will expire after &chanexpiry& days.
+
+Registered users: &myusers&
+Registered channels: &mychans&
+
+The services administrator can add additional information
+here such as where to get additional help with services.

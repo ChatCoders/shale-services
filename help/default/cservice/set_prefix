@@ -1,0 +1,15 @@
+Help for SET PREFIX:
+
+PREFIX allows you to customize the channel fantasy trigger
+for your channel. This is particularly useful if you have
+channel bots that conflict with &nick&'s default fantasy
+prefix. Providing no prefix argument (or DEFAULT) resets
+the channel fantasy prefix to the network default prefix.
+
+Syntax: SET <#channel> PREFIX [prefix]
+
+Examples:
+    /msg &nick& SET #freenode PREFIX
+    /msg &nick& SET #freenode PREFIX '
+    /msg &nick& SET #Xtheme PREFIX %
+    /msg &nick& SET #Xtheme PREFIX default
