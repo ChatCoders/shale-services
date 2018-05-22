@@ -5,7 +5,7 @@
  *
  * This file contains functionality implementing OperServ CLEARCHAN.
  *
- * Default AKILL/ZLINE or DLINE time is 7 days (604800 seconds)
+ * Default AKILL time is 7 days (604800 seconds)
  *
  */
 
@@ -21,7 +21,6 @@ DECLARE_MODULE_V1
 #define CLEAR_KICK 1
 #define CLEAR_KILL 2
 #define CLEAR_AKILL 3
-#define CLEAR_ZLINE 4
 
 static void os_cmd_clearchan(sourceinfo_t *si, int parc, char *parv[]);
 
@@ -50,12 +49,11 @@ static void os_cmd_clearchan(sourceinfo_t *si, int parc, char *parv[])
 	int matches = 0;
 	int ignores = 0;
 	kline_t *k;
-	zline_t *z;
 
 	if (!actionstr || !targchan || !treason)
 	{
 		command_fail(si, fault_needmoreparams, STR_INSUFFICIENT_PARAMS, "CLEARCHAN");
-		command_fail(si, fault_needmoreparams, _("Syntax: CLEARCHAN KICK|KILL|AKILL|ZLINE <#channel> <reason>"));
+		command_fail(si, fault_needmoreparams, _("Syntax: CLEARCHAN KICK|KILL|AKILL <#channel> <reason>"));
  		return;
 	}
 
@@ -72,8 +70,6 @@ static void os_cmd_clearchan(sourceinfo_t *si, int parc, char *parv[])
 		action = CLEAR_KICK;
 	else if (!strcasecmp(actionstr, "KILL"))
 		action = CLEAR_KILL;
-	else if (!strcasecmp(actionstr, "ZLINE"))
-		action = CLEAR_ZLINE;
 	else if (!strcasecmp(actionstr, "AKILL") || !strcasecmp(actionstr, "GLINE") || !strcasecmp(actionstr, "KLINE"))
 		action = CLEAR_AKILL;
 	else
@@ -133,17 +129,6 @@ static void os_cmd_clearchan(sourceinfo_t *si, int parc, char *parv[])
 							cu->user->flags |= UF_KLINESENT;
 						}
 					}
-				case CLEAR_ZLINE:
-					if (is_autokline_exempt(cu->user)) {
-						command_success_nodata(si, _("\2CLEARCHAN\2: Not zlining exempt user %s!%s@%s"),
-								cu->user->nick, cu->user->user, cu->user->host);
-					} else {
-						if (! (cu->user->flags & UF_KLINESENT)) {
-							z = zline_add(cu->user->ip, reason, 604800, si->su->nick);
-							cu->user->flags |= UF_KLINESENT;
-						}
-					}
-
 			}
 		}
 	}

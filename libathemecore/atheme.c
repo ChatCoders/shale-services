@@ -206,7 +206,6 @@ void atheme_init(char *execname, char *log_p)
 {
 	me.execname = execname;
 	me.kline_id = 0;
-	me.zline_id = 0;
 	me.start = time(NULL);
 	CURRTIME = me.start;
 	srand(arc4random());
@@ -429,9 +428,8 @@ int atheme_main(int argc, char *argv[])
 	/* check expires every hour */
 	mowgli_timer_add(base_eventloop, "expire_check", expire_check, NULL, 3600);
 
-	/* check k/z/x/q line expires every minute */
+	/* check k/x/q line expires every minute */
 	mowgli_timer_add(base_eventloop, "kline_expire", kline_expire, NULL, 60);
-	mowgli_timer_add(base_eventloop, "zline_expire", zline_expire, NULL, 60);
 	mowgli_timer_add(base_eventloop, "xline_expire", xline_expire, NULL, 60);
 	mowgli_timer_add(base_eventloop, "qline_expire", qline_expire, NULL, 60);
 

@@ -89,7 +89,6 @@ static void connection_stats_cb(const char *line, void *privdata)
 void handle_stats(user_t *u, char req)
 {
 	kline_t *k;
-	zline_t *z;
 	xline_t *x;
 	qline_t *q;
 	mowgli_node_t *n;
@@ -234,7 +233,6 @@ void handle_stats(user_t *u, char req)
 		  numeric_sts(me.me, 249, u, "T :soper      %7d", cnt.soper);
 		  numeric_sts(me.me, 249, u, "T :tld        %7d", cnt.tld);
 		  numeric_sts(me.me, 249, u, "T :kline      %7d", cnt.kline);
-		  numeric_sts(me.me, 249, u, "T :zline      %7d", cnt.zline);
 		  numeric_sts(me.me, 249, u, "T :xline      %7d", cnt.xline);
 		  numeric_sts(me.me, 249, u, "T :server     %7d", cnt.server);
 		  numeric_sts(me.me, 249, u, "T :user       %7d", cnt.user);

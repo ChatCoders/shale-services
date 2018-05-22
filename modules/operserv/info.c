@@ -48,7 +48,6 @@ static void os_cmd_info(sourceinfo_t *si, int parc, char *parv[])
 	{
 		command_success_nodata(si, _("user@host mask(s) that are autokline exempt: %s"), (char *)n2->data);
 	}
-	command_success_nodata(si, _("Default ZLINE time: %d days"), config_options.zline_time / 86400);
 	command_success_nodata(si, _("Default maximum number of clones allowed: %d"), config_options.default_clone_allowed);
 	command_success_nodata(si, _("Will services be sending WALLOPS/GLOBOPS about various things: %s"), config_options.silent ? "no" : "yes");
 	command_success_nodata(si, _("Show entity IDs to everyone: %s"),

@@ -812,6 +812,7 @@ bool bad_password(sourceinfo_t *si, myuser_t *mu)
 	int count;
 	metadata_t *md_failnum;
 	service_t *svs;
+        kline_t *k;
 
 	/* If the user is already logged in, no paranoia is needed,
 	 * as they could /ns set password anyway.

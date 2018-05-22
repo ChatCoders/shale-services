@@ -57,8 +57,8 @@
  * module.  It was then tested and further modified by siniStar.
  * An example of the configuration needed will be added to the
  * xtheme.conf.example, however it will be commented out by default.
- * NOTE: Default AKILL and ZLINE times are used from your default
- * akill_time and zline_time in xtheme.conf.
+ * NOTE: Default AKILL times are used from your default
+ * akill_time in shale.conf.
  */
 
 #include "atheme.h"
@@ -79,7 +79,6 @@ enum dnsbl_action {
 	DNSBL_ACT_NOTIFY,
 	DNSBL_ACT_SNOOP,
 	DNSBL_ACT_AKILL,
-	DNSBL_ACT_ZLINE,
 } action;
 
 #define ITEM_DESC(x) [DNSBL_ACT_ ## x] = #x
@@ -89,7 +88,6 @@ const char *action_names[] = {
 	ITEM_DESC(NOTIFY),
 	ITEM_DESC(SNOOP),
 	ITEM_DESC(AKILL),
-	ITEM_DESC(ZLINE),
 	NULL
 };
 
@@ -518,7 +516,6 @@ static void dnsbl_hit(user_t *u, struct Blacklist *blptr)
 {
 	service_t *svs;
 	kline_t *k;
-	zline_t *z;
 
 	svs = service_find("operserv");
 
@@ -530,12 +527,6 @@ static void dnsbl_hit(user_t *u, struct Blacklist *blptr)
 			slog(LG_INFO, "DNSBL: akilling \2%s\2!%s@%s [%s] who is listed in DNS Blacklist %s.", u->nick, u->user, u->host, u->gecos, blptr->host);
 			notice(svs->nick, u->nick, "Your IP address %s is listed in DNS Blacklist %s", u->ip, blptr->host);
 			k = kline_add("*", u->ip, "Banned (DNS Blacklist)", config_options.akill_time, blptr->host);
-			break;
-
-		case DNSBL_ACT_ZLINE:
-			slog(LG_INFO, "DNSBL: zlining \2%s\2!%s@%s [%s] who is listed in DNS Blacklist %s.", u->nick, u->user, u->host, u->gecos, blptr->host);
-			notice(svs->nick, u->nick, "Your IP address %s is listed in DNS Blacklist %s", u->ip, blptr->host);
-			z = zline_add(u->ip, "Banned (DNS Blacklist)", config_options.zline_time, blptr->host);
 			break;
 
 		case DNSBL_ACT_NOTIFY:
