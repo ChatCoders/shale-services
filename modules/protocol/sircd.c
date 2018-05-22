@@ -54,7 +54,7 @@ struct cmode_ sircd_mode_list[] = {
   { 't', CMODE_TOPIC  },
   { 'c', CMODE_NOCOLOR},
   { 'r', CMODE_REGONLY},
-  { 'z', CMODE_OPMOD  },
+  { 'u', CMODE_OPMOD  },
   { 'g', CMODE_FINVITE},
   { 'L', CMODE_EXLIMIT},
   { 'P', CMODE_PERM   },
@@ -72,6 +72,7 @@ struct cmode_ sircd_mode_list[] = {
   { 'd', CMODE_NONICKS },
   { 'K', CMODE_NOREPEAT },
   { 'J', CMODE_KICKNOREJOIN },
+  { 'B', CMODE_HIDEBANS },
   { '\0', 0 }
 };
 
