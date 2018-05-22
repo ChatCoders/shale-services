@@ -27,6 +27,7 @@ SRCS = \
 	ngircd.c	\
 	p10-generic.c	\
 	ratbox.c	\
+        sircd.c         \
 	shadowircd.c	\
 	ts6-generic.c	\
 	undernet.c	\
