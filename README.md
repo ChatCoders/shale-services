@@ -1,4 +1,4 @@
-## Shale
+## Shale-Services
 
 [![Build Status](https://travis-ci.org/ShaleCoding/shale-services.svg?branch=master)](https://travis-ci.org/ShaleCoding/shale-services)
 
@@ -9,8 +9,7 @@ derived from another package called Atheme and Shrike.
 shale's behavior is tunable using modules and a highly detailed configuration file.
 Almost all behavior can be changed at deployment time just by editing the configuration.
 
-If you are running this code from Git, you should read GIT-Access for instructions on
-how to fully check out the shale tree, as it is spread across many repositories.
+If you are running this code from Git, you should run `git submodule update --init`
 
 ## Basic build instructions for the impatient
 
@@ -22,7 +21,6 @@ shale will default to installing in `$HOME/shale`, so make sure you plan accordi
     $ make
     $ make install
 
-If you're still lost, read [INSTALL](INSTALL) or [GIT-Access](GIT-Access) for hints.
 Help is also available on the [shale IRC Services Wiki](https://github.com/ShaleCoding/shale-services/wiki)
 
 ## IRC Support

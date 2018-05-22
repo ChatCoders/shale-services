@@ -85,8 +85,8 @@ Notes:
 1.1 Compiling
 -------------
 
-If you are installing Services from Git and need libmowgli, please read the
-GIT-Access file for information on how to pull in libmowgli as a submodule.
+If you are installing Services from Git and need libmowgli, please run the
+following command `git submodule update --init`.
 
 Run the "configure" script:
 

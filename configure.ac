@@ -21,10 +21,10 @@ BUILDSYS_SHARED_LIB
 BUILDSYS_PROG_IMPLIB
 LIBS="$LIBS $DYNAMIC_LD_LIBS"
 
-AC_MSG_CHECKING([if you read GIT-Access])
+AC_MSG_CHECKING([if you read INSTALL])
 if ! test -f libmowgli-2/Makefile -a -f modules/contrib/Makefile; then
 	AC_MSG_RESULT(no)
-	AC_ERROR([please read GIT-Access before trying to build from git])
+	AC_ERROR([please run git submodule update --init])
 fi
 AC_MSG_RESULT(yes)
 

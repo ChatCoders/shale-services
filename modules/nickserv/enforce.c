@@ -274,7 +274,7 @@ static void ns_cmd_release(sourceinfo_t *si, int parc, char *parv[])
 	else
 	{
 		logcommand(si, CMDLOG_DO, "failed RELEASE \2%s\2 (bad password)", target);
-		command_fail(si, fault_authfail, _("AUTHENTICATION FAILED as \2%s\2!"), target);
+		command_fail(si, fault_authfail, _("Invalid password for \2%s\2!"), target);
 		bad_password(si, mn->owner);
 	}
 }
@@ -448,7 +448,7 @@ static void ns_cmd_regain(sourceinfo_t *si, int parc, char *parv[])
 	else
 	{
 		logcommand(si, CMDLOG_DO, "failed REGAIN \2%s\2 (bad password)", target);
-		command_fail(si, fault_authfail, _("AUTHENTICATION FAILED as \2%s\2!"), target);
+		command_fail(si, fault_authfail, _("Invalid password for \2%s\2!"), target);
 		bad_password(si, mn->owner);
 	}
 }
