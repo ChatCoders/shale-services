@@ -15,6 +15,7 @@ SRCS = \
 	charybdis.c	\
 	chatircd.c	\
 	elemental-ircd.c\
+        foxaircd.c      \
 	hybrid.c	\
 	inspircd.c	\
 	ircd-seven.c  \
