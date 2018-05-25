@@ -157,6 +157,11 @@ static void cs_cmd_freeze(sourceinfo_t *si, int parc, char *parv[])
 							modestack_mode_param(chansvs.nick, mc->chan, MTYPE_DEL, ircd->halfops_mchar[1], CLIENT_NAME(cu->user));
 							cu->modes &= ~ircd->halfops_mode;
 						}
+                                                if ((CSTATUS_VOICE & cu->modes))
+                                                {
+                                                        modestack_mode_param(chansvs.nick, mc->chan, MTYPE_DEL, 'v', CLIENT_NAME(cu->user));
+                                                        cu->modes &= ~CSTATUS_VOICE;
+                                                }
 					}
 			}
 
