@@ -192,7 +192,7 @@ static void cs_cmd_freeze(sourceinfo_t *si, int parc, char *parv[])
 				part(target, chansvs.nick);
 		}
 
-		topicsetter = "Services";
+		topicsetter = "Staff";
 		prevtopicts = c->topicts;
 		handle_topic(c, topicsetter, CURRTIME, "Channel has been un-suspended by Network Staff");
 		topic_sts(c, chansvs.me->me, topicsetter, CURRTIME, prevtopicts, "Channel has been un-suspended by Network Staff");
