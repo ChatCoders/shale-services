@@ -386,10 +386,10 @@ static void cs_join(hook_channel_joinpart_t *hdata)
 	md3 = metadata_find(mc, "private:frozen:reason");
 	if (md3 != NULL)
 	{
-		topicsetter = "Services";
+		topicsetter = "Staff";
 		prevtopicts = chan->topicts;
-		handle_topic(chan, topicsetter, CURRTIME, "Channel has been mass suspended (FROZEN) by Network Staff");
-		topic_sts(chan, chansvs.me->me, topicsetter, CURRTIME, prevtopicts, "Channel has been mass suspended (FROZEN) by Network Staff");
+		handle_topic(chan, topicsetter, CURRTIME, "Channel has been suspended by Network Staff");
+		topic_sts(chan, chansvs.me->me, topicsetter, CURRTIME, prevtopicts, "Channel has been suspended by Network Staff");
 	}
 
 	/*

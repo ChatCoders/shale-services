@@ -162,10 +162,10 @@ static void cs_cmd_freeze(sourceinfo_t *si, int parc, char *parv[])
 
 		}
 
-		topicsetter = "Services";
+		topicsetter = "Staff";
 		prevtopicts = c->topicts;
-		handle_topic(c, topicsetter, CURRTIME, "Channel has been mass suspended (FROZEN) by Network Staff");
-		topic_sts(c, chansvs.me->me, topicsetter, CURRTIME, prevtopicts, "Channel has been mass suspended (FROZEN) by Network Staff");
+		handle_topic(c, topicsetter, CURRTIME, "Channel has been suspended by Network Staff");
+		topic_sts(c, chansvs.me->me, topicsetter, CURRTIME, prevtopicts, "Channel has been suspended by Network Staff");
 
 		wallops("%s froze the channel \2%s\2 (%s).", get_oper_name(si), target, reason);
 		logcommand(si, CMDLOG_ADMIN, "FREEZE:ON: \2%s\2 (reason: \2%s\2)", target, reason);
@@ -194,8 +194,8 @@ static void cs_cmd_freeze(sourceinfo_t *si, int parc, char *parv[])
 
 		topicsetter = "Services";
 		prevtopicts = c->topicts;
-		handle_topic(c, topicsetter, CURRTIME, "Channel has been un-suspended (UN-FROZEN) by Network Staff");
-		topic_sts(c, chansvs.me->me, topicsetter, CURRTIME, prevtopicts, "Channel has been un-suspended (UN-FROZEN) by Network Staff");
+		handle_topic(c, topicsetter, CURRTIME, "Channel has been un-suspended by Network Staff");
+		topic_sts(c, chansvs.me->me, topicsetter, CURRTIME, prevtopicts, "Channel has been un-suspended by Network Staff");
 
 		wallops("%s unfroze the channel \2%s\2.", get_oper_name(si), target);
 		logcommand(si, CMDLOG_ADMIN, "FREEZE:OFF: \2%s\2", target);
