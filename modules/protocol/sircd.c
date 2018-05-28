@@ -184,30 +184,6 @@ static bool extgecos_match(const char *mask, user_t *u)
 	return !match(mask, hostgbuf) || !match(mask, realgbuf);
 }
 
-/* Check if the user is both *NOT* identified to services, and
- * matches the given hostmask.  Syntax: $u:n!u@h
- * e.g. +b $u:*!webchat@* would ban all webchat users who are not
- * identified to services.
- */
-static bool unidentified_match(const char *mask, user_t *u)
-{
-	char hostbuf[NICKLEN+USERLEN+HOSTLEN];
-	char realbuf[NICKLEN+USERLEN+HOSTLEN];
-
-	/* Is identified, so just bail. */
-	if (u->myuser != NULL)
-		return false;
-
-	snprintf(hostbuf, sizeof hostbuf, "%s!%s@%s", u->nick, u->user, u->vhost);
-	snprintf(realbuf, sizeof realbuf, "%s!%s@%s", u->nick, u->user, u->host);
-
-	/* If here, not identified to services so just check if the given hostmask matches. */
-	if (!match(mask, hostbuf) || !match(mask, realbuf))
-		return true;
-
-	return false;
-}
-
 static mowgli_node_t *sircd_next_matching_ban(channel_t *c, user_t *u, int type, mowgli_node_t *first)
 {
 	chanban_t *cb;
@@ -285,11 +261,6 @@ static mowgli_node_t *sircd_next_matching_ban(channel_t *c, user_t *u, int type,
                                                 continue;
                                         matched = !match(p, u->server->name);
                                         break;
-				case 'u':
-					if (p == NULL)
-						continue;
-					matched = unidentified_match(p, u);
-					break;
 				case 'x':
 					if (p == NULL)
 						continue;
@@ -318,9 +289,9 @@ static void sircd_notice_channel_sts(user_t *from, channel_t *target, const char
 static bool sircd_is_extban(const char *mask)
 {
 	const char without_param[] = "oza";
-        const char with_param[] = "ajcxru";
+        const char with_param[] = "ajcxr";
 	const size_t mask_len = strlen(mask);
-	unsigned int offset = 0;
+	unsigned char offset = 0;
 
 	if ((mask_len < 2 || mask[0] != '$'))
 		return NULL;
