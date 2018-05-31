@@ -34,7 +34,7 @@ ircd_t sircd = {
         "+q",                            /* Mode we set for owner. */
         "+a",                            /* Mode we set for protect. */
         "+h",                            /* Mode we set for halfops. */
-	PROTOCOL_CHARYBDIS,		/* Protocol type */
+	PROTOCOL_SIRCD,		        /* Protocol type */
 	CMODE_PERM,                     /* Permanent cmodes */
 	0,                              /* Oper-immune cmode */
 	"beIq",                         /* Ban-like cmodes */
