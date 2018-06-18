@@ -1,16 +1,31 @@
 language: c
+
+addons:
+  apt:
+    packages:
+      - libperl-dev
+      - libssl-dev
+
+sudo: false
+
 compiler:
-- gcc
+  - gcc
+  - clang
 
-before-install:
-- sudo apt-get update
-install:
-- sudo apt-get install build-essential libssl-dev flex libperl-dev bison gettext git-core
-script: 
-  - git submodule update --init
-  - ./configure
-  - make
-  - make install
+env:
+  - OPTIONAL_CONF_ARGS=""
+  - OPTIONAL_CONF_ARGS="--with-perl"
+  - OPTIONAL_CONF_ARGS="--enable-contrib"
+  - OPTIONAL_CONF_ARGS="--enable-unsupported"
 
+script:
+  - ./configure --disable-nls --enable-ssl $OPTIONAL_CONF_ARGS
+  - make -j $(nproc)
+
+matrix:
+  fast_finish: true
+  allow_failures:
+    - env: OPTIONAL_CONF_ARGS="--enable-contrib"
+    - env: OPTIONAL_CONF_ARGS="--enable-unsupported"
 notifications:
-  irc: "irc.chatfreedom.us#shaleservices"
+  irc: "irc.chatfreedom.us#ShaleServices"

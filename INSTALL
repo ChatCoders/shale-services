@@ -23,6 +23,7 @@ TABLE OF CONTENTS
   4. Starting Services
   5. Setting up a crontab entry
   6. Compiling the contrib modules
+  7. Compiling the unsupported modules
 
 You should also read the README and FAQ files.
 
@@ -231,3 +232,27 @@ a live network like:
 or in your shale.conf by adding a loadmodule line like:
 
     loadmodule "modules/contrib/os_kill";
+
+7. COMPILING THE UNSUPPORTED MODULES
+--------------------------------
+
+In the shale source there is a directory called unsupported filled with all sorts
+of modules that are not supported and for testing only. Compiling these modules is very simple,
+these modules maybe IRC specific only.
+
+A README for what each unsupported module does is at `modules/unsupported/README`.
+
+Pass the --enable-unsupported switch to the configure script like so:
+
+    $ ./configure --enable-unsupported
+
+The contrib modules will then be in your shale install directory (by default
+this is ~/shale/) in the modules/unsupported directory. you can then load them on
+a live network like:
+
+    /msg operserv modload unsupported/cs_tickle
+
+or in your shale.conf by adding a loadmodule line like:
+
+    loadmodule "modules/unsupported/cs_tickle";
+
