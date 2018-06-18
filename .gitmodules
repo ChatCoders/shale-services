@@ -7,3 +7,6 @@
 [submodule "modules/contrib"]
 	path = modules/contrib
 	url = git://github.com/ShaleCoding/shale-contrib-modules.git
+[submodule "modules/unsupported"]
+	path = modules/unsupported
+	url = git://github.com/ShaleCoding/unsupported.git
