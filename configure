@@ -637,6 +637,7 @@ LIBQRENCODE_LIBS
 LIBQRENCODE_CFLAGS
 SSL_LIBS
 CONTRIB_ENABLE
+UNSUPPORTED_ENABLE
 LOCALEDIR
 BUILDDIR
 SRCDIR
@@ -776,6 +777,7 @@ with_perl
 enable_fhs_paths
 enable_large_net
 enable_contrib
+enable_unsupported
 enable_ssl
 enable_warnings
 enable_propolice
@@ -1417,6 +1419,7 @@ Optional Features:
   --enable-fhs-paths      Use more FHS-like pathnames (for packagers).
   --enable-large-net      Enable large network support.
   --enable-contrib        Enable contrib modules.
+  --enable-unsupported    Enable unsupported modules.
   --disable-ssl           don't use OpenSSL to provide more SASL mechanisms
   --enable-warnings       Enable compiler warnings
   --disable-propolice     Disable propolice protections (for debugging.)
@@ -8098,6 +8101,31 @@ else
 	CONTRIB_ENABLE=""
 fi
 
+UNSUPPORTED="no"
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking if you want unsupported modules" >&5
+$as_echo_n "checking if you want unsupported modules... " >&6; }
+# Check whether --enable-unsupported was given.
+if test "${enable_unsupported+set}" = set; then :
+  enableval=$enable_unsupported;
+  case "$enableval" in
+  yes)
+    UNSUPPORTED="yes"
+    ;;
+  no)
+    UNSUPPORTED="no"
+    ;;
+  esac
+
+fi
+
+{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $UNSUPPORTED" >&5
+$as_echo "$UNSUPPORTED" >&6; }
+
+if test "$UNSUPPORTED" = "yes"; then
+	UNSUPPORTED_ENABLE="unsupported"
+else
+	UNSUPPORTED_ENABLE=""
+fi
 
 
 # Check whether --enable-ssl was given.
@@ -11494,6 +11522,7 @@ Configuration:
 	Large network support: ${LARGENET}
 	OpenSSL SASL support : ${SSL}
 	Contrib modules      : ${CONTRIB}
+        Unsupported modules  : ${UNSUPPORTED}
 	Mowgli installation  : ${MOWGLI_SOURCE}
 	PCRE support         : ${with_pcre}
 	Perl support         : ${with_perl}

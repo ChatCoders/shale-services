@@ -253,6 +253,30 @@ fi
 
 AC_SUBST(CONTRIB_ENABLE)
 
+UNSUPPORTED="no"
+AC_MSG_CHECKING(if you want unsupported modules)
+AC_ARG_ENABLE(unsupported,
+AC_HELP_STRING([--enable-unsupported],[ Enable unsupported modules.]),
+[
+  case "$enableval" in
+  yes)
+    UNSUPPORTED="yes"
+    ;;
+  no)
+    UNSUPPORTED="no"
+    ;;
+  esac
+])
+AC_MSG_RESULT($UNSUPPORTED)
+
+if test "$UNSUPPORTED" = "yes"; then
+	UNSUPPORTED_ENABLE="unsupported"
+else
+	UNSUPPORTED_ENABLE=""
+fi
+
+AC_SUBST(UNSUPPORTED_ENABLE)
+
 AC_ARG_ENABLE(ssl,
 	AC_HELP_STRING([--disable-ssl], [don't use OpenSSL to provide more SASL mechanisms]),
 	,
@@ -443,6 +467,7 @@ Configuration:
 	Large network support: ${LARGENET}
 	OpenSSL SASL support : ${SSL}
 	Contrib modules      : ${CONTRIB}
+        Unsupported modules  : ${UNSUPPORTED}
 	Mowgli installation  : ${MOWGLI_SOURCE}
 	PCRE support         : ${with_pcre}
 	Perl support         : ${with_perl}

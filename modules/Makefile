@@ -26,6 +26,7 @@ SUBDIRS = \
 	scripting \
 	transport \
 	$(CONTRIB_ENABLE)
+        $(UNSUPPORTED_ENABLE)
 
 include ../extra.mk
 include ../buildsys.mk
