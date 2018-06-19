@@ -10,7 +10,6 @@ sudo: false
 
 compiler:
   - gcc
-  - clang
 
 env:
   - OPTIONAL_CONF_ARGS=""
