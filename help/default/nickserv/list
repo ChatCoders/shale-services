@@ -44,6 +44,9 @@ USE-PRIVMSG   - All users with the USEPRIVMSG flag set.
 #if module nickserv/set_quietchg
 QUIETCHG      - All users with the QUIETCHG flag set.
 #endif
+#if module nickserv/set_quietpass
+QUIETPASS     - All users with the QUIETPASS flag set.
+#endif
 #if module nickserv/set_nogreet
 NOGREET       - All users with the NOGREET flag set.
 #endif
