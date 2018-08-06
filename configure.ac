@@ -8,7 +8,7 @@ dnl Process this file with autoconf to produce a configure script.
 
 AC_PREREQ(2.59)
 
-AC_INIT(shale, 1.0.2, [https://github.com/ShaleCoding/shale-services/issues])
+AC_INIT(shale, 1.0.3, [https://github.com/ShaleCoding/shale-services/issues])
 
 AC_CONFIG_AUX_DIR(autoconf)
 

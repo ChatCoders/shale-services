@@ -1135,7 +1135,7 @@ static void m_fmode(sourceinfo_t *si, int parc, char *parv[])
 		c = channel_find(parv[0]);
 		if (c == NULL)
 		{
-			slog(LG_DEBUG, "m_fmode(): nonexistant channel: %s", parv[0]);
+			slog(LG_DEBUG, "m_fmode(): nonexistent channel: %s", parv[0]);
 			return;
 		}
 		ts = atoi(parv[1]);
@@ -1161,13 +1161,13 @@ static void m_kick(sourceinfo_t *si, int parc, char *parv[])
 
 	if (!u)
 	{
-		slog(LG_DEBUG, "m_kick(): got kick for nonexistant user %s", parv[1]);
+		slog(LG_DEBUG, "m_kick(): got kick for nonexistent user %s", parv[1]);
 		return;
 	}
 
 	if (!c)
 	{
-		slog(LG_DEBUG, "m_kick(): got kick in nonexistant channel: %s", parv[0]);
+		slog(LG_DEBUG, "m_kick(): got kick in nonexistent channel: %s", parv[0]);
 		return;
 	}
 
