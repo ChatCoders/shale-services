@@ -21,14 +21,14 @@ shale will default to installing in `$HOME/shale`, so make sure you plan accordi
     $ make
     $ make install
 
-Help is also available on the [shale IRC Services Wiki](https://github.com/ShaleCoding/shale-services/wiki)
+Help is also available on the [shale IRC Services Wiki](https://github.com/Hyphovy/shale-services/wiki)
 
 ## IRC Support
 
- * [IRC](irc://irc.chatfreedom.us/#shaleservices) irc.chatfreedom.us #shaleservices
+ * [IRC](irc://irc.pandalanda.cc/#hyphovy) irc.pandalanda.cc #hyphovy
 
 ## links / contact
 
  * [GitHub](http://www.github.com/ShaleCoding/shale-services)
  * [Website](http://shale.chatfreedom.us)
- * [IRC](irc://irc.chatfreedom.us/#shaleservices) irc.chatfreedom.us #shaleservices
+ * [IRC](irc://irc.pandalanda.cc/#hyphovy) irc.pandalanda.cc #hyphovy
