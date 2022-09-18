@@ -1,12 +1,12 @@
 [submodule "libmowgli-2"]
-	path = libmowgli-2
-	url = git://github.com/atheme/libmowgli-2.git
+        path = libmowgli-2
+        url = https://github.com/ChatCoders/libmowgli-2.git
 [submodule "libunwind"]
-	path = libunwind
-	url = git://git.savannah.gnu.org/libunwind.git
+        path = libunwind
+        url = git://git.savannah.gnu.org/libunwind.git
 [submodule "modules/contrib"]
-	path = modules/contrib
-	url = git://github.com/ShaleCoding/shale-contrib-modules.git
+        path = modules/contrib
+        url = https://github.com/ChatCoders/shale-contrib-modules.git
 [submodule "modules/unsupported"]
-	path = modules/unsupported
-	url = git://github.com/ShaleCoding/unsupported.git
+        path = modules/unsupported
+        url = https://github.com/ChatCoders/unsupported.git
