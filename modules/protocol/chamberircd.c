@@ -22,19 +22,19 @@ ircd_t chamberircd = {
         "$$",                           /* TLD Prefix, used by Global. */
         true,                           /* Whether or not we use IRCNet/TS6 UID */
         false,                          /* Whether or not we use RCOMMAND */
-        true,                          /* Whether or not we support channel owners. */
-        true,                          /* Whether or not we support channel protection. */
-        true,                          /* Whether or not we support halfops. */
+        true,                           /* Whether or not we support channel owners. */
+        true,                           /* Whether or not we support channel protection. */
+        true,                           /* Whether or not we support halfops. */
 	false,				/* Whether or not we use P10 */
 	false,				/* Whether or not we use vHosts. */
 	CMODE_EXLIMIT | CMODE_PERM,	/* Oper-only cmodes */
-        CSTATUS_OWNER,                              /* Integer flag for owner channel flag. */
-        CSTATUS_PROTECT,                              /* Integer flag for protect channel flag. */
-        CSTATUS_HALFOP,                              /* Integer flag for halfops. */
-        "+q",                            /* Mode we set for owner. */
-        "+a",                            /* Mode we set for protect. */
-        "+h",                            /* Mode we set for halfops. */
-	PROTOCOL_chamberircd,		        /* Protocol type */
+        CSTATUS_OWNER,                  /* Integer flag for owner channel flag. */
+        CSTATUS_PROTECT,                /* Integer flag for protect channel flag. */
+        CSTATUS_HALFOP,                 /* Integer flag for halfops. */
+        "+q",                           /* Mode we set for owner. */
+        "+a",                           /* Mode we set for protect. */
+        "+h",                           /* Mode we set for halfops. */
+	PROTOCOL_CHAMBERIRCD,		/* Protocol type */
 	CMODE_PERM,                     /* Permanent cmodes */
 	0,                              /* Oper-immune cmode */
 	"beIq",                         /* Ban-like cmodes */
