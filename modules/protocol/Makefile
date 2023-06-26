@@ -12,6 +12,7 @@ SRCS = \
 	asuka.c	\
 	bahamut.c	\
 	base36uid.c	\
+        chamberircd.c   \
 	charybdis.c	\
 	chatircd.c	\
 	elemental-ircd.c\
@@ -28,8 +29,7 @@ SRCS = \
 	ngircd.c	\
 	p10-generic.c	\
 	ratbox.c	\
-        sircd.c         \
-	shadowircd.c	\
+        shadowircd.c	\
 	ts6-generic.c	\
 	undernet.c	\
 	unreal.c	\
