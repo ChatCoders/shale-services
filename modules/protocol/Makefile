@@ -17,6 +17,7 @@ SRCS = \
 	chatircd.c	\
 	elemental-ircd.c\
         foxaircd.c      \
+	fireircd.c	\
 	hybrid.c	\
 	inspircd.c	\
 	ircd-seven.c  \
